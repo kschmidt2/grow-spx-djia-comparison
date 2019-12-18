@@ -5,13 +5,16 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
+    @include x-small {
+        width: 80%;
+    }
 }
 
 .chart-subhead {
     fill: $slate-secondary-6;
     font-size: 16px;
     line-height: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     max-width: 600px;
 }
 

@@ -40,7 +40,7 @@ setTimeout(function() {
 function drawHighcharts() {
     Highcharts.chart(chartId, {
         chart: {
-            type: 'bar',
+            type: 'column',
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 100
@@ -49,7 +49,8 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0'
+            googleSpreadsheetKey: '1AsA5D88argKAzCRuO0zJTQRTiIEP3oilEakoiK173zk',
+            googleSpreadsheetWorksheet: 3
         },
         // for bar charts only
         plotOptions: {
@@ -94,14 +95,18 @@ function drawHighcharts() {
             labels: {
                 useHTML: true,
                 overflow: 'allow'
-            }
+            },
+            max: 30
         },
         credits: {
             enabled: false
         },
         tooltip: {
             shadow: false,
-            padding: 10
+            padding: 10,
+            valueDecimals: 2,
+            valueSuffix: '%',
+            shared: true
         },
         responsive: {
             rules: [{
@@ -114,7 +119,8 @@ function drawHighcharts() {
                 },
                 legend: {
                     align: 'left',
-                    x: -18
+                    x: -18,
+                    itemMarginTop: 0
                 },
                 tooltip: {
                     enabled: false
